@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: 'Portfolio Website',
-    description: 'Used Three.js to create dynamic cube. Links to github, linkedin, and resume on website.',
+    description: 'Used Three.js to create dynamic cube. Links to github, linkedin, resume, and personal projects on website.',
     link: 'https://aarongurovich.com',
     image: './assets/images/portfol.PNG',
   },
