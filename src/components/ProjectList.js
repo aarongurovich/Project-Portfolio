@@ -5,10 +5,10 @@ import ProjectCard from './ProjectCard';
 
 const projects = [
   {
-    title: 'Tours Website',
-    description: 'Can browse through several tour options. Extra practice using useEffect and useState.',
-    link: 'https://tour-website.pages.dev/',
-    image: './assets/images/tours.PNG',
+    title: 'React Practice',
+    description: 'Some fun projects I built with React to get more comfortable with it.',
+    link: 'https://react-practice-f43.pages.dev/',
+    image: './assets/images/reactpractice.PNG',
   },
   {
     title: 'Random Movie Generator',
