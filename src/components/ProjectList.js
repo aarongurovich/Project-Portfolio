@@ -5,8 +5,8 @@ import ProjectCard from './ProjectCard';
 
 const projects = [
   {
-    title: 'React Practice',
-    description: 'Some fun projects I built with React to get more comfortable with it.',
+    title: 'Reactfolio',
+    description: 'Showcase of useful components designed to enhance and build dynamic websites',
     link: 'https://react-practice-f43.pages.dev/',
     image: './assets/images/reactpractice.PNG',
   },
