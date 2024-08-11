@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard';
 const projects = [
   {
     title: 'Reactfolio',
-    description: 'Showcase of useful components designed to enhance and build dynamic websites',
+    description: 'Showcase of useful components designed to enhance and build dynamic websites, and small projects using React.',
     link: 'https://react-practice-f43.pages.dev/',
     image: './assets/images/reactpractice.PNG',
   },
