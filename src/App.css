@@ -42,7 +42,6 @@ body, html, #root {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 2.5em;
-  background-image: url('https://i.imgur.com/YourCartoonTurtleHeader.png'); /* Replace with your turtle-themed image */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -241,11 +240,15 @@ body, html, #root {
     padding: 8px 16px;
     font-size: 0.95em;
   }
+  .App{
+    font-family: Arial, sans-serif;
+  }
 }
 
 @media (max-width: 480px) {
   .App {
     padding: 30px 10px;
+    font-family: Arial, sans-serif;
   }
 
   .App-header {
