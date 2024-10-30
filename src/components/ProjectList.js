@@ -11,10 +11,10 @@ const projects = [
     image: './assets/images/randommovie.PNG',
   },
   {
-    title: 'Reddit Clone',
-    description: 'Can search for posts and explore different topics across various communities.',
-    link: 'https://reddit-client-5io.pages.dev/',
-    image: './assets/images/redditclone.PNG',
+    title: 'Argumate AI',
+    description: 'This web app records or uploads arguments/debates, scores each speaker, and picks a winner!',
+    link: 'https://react-argument-gpt.pages.dev/',
+    image: './assets/images/argue.PNG',
   },
   {
     title: 'Portfolio Website',

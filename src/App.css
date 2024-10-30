@@ -1,90 +1,287 @@
+/* Root Variables for Consistent Theming */
+:root {
+  --primary-color: #388e3c; /* Turtle Green */
+  --secondary-color: #ff9800; /* Coral Orange */
+  --accent-color: #81c784; /* Soft Green */
+  --background-color: #e0f7fa; /* Light Aqua */
+  --card-bg-color: #ffffff; /* White for Cards */
+  --text-color: #2e7d32; /* Deep Green */
+  --subtext-color: #4e342e; /* Brown for Subtext */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* App Container */
 .App {
   text-align: center;
   padding: 40px 20px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #e0e6ed;
-  color: #333;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh; /* Ensures full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
+/* App Header */
 .App-header {
-  background-color: #1c1f24;
-  padding: 80px 30px;
+  background-color: var(--primary-color);
+  padding: 60px 20px;
   color: #ffffff;
-  margin-bottom: 60px;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px var(--shadow-color);
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 2.5em;
+  background-image: url('https://i.imgur.com/YourCartoonTurtleHeader.png'); /* Replace with your turtle-themed image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  animation: headerFloat 6s ease-in-out infinite;
 }
 
+/* Floating Animation for Header */
+@keyframes headerFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Project List Container */
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
+/* Project Card Styling */
 .project-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 32px;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden;
+  background: var(--card-bg-color);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 6px 12px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: floatCard 6s ease-in-out infinite;
 }
 
+/* Floating Animation for Cards */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Project Card Image */
 .project-card img {
   max-width: 100%;
   border-radius: 12px;
-  margin-bottom: 24px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.project-card h3 {
-  margin-top: 16px;
-  margin-bottom: 12px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #1c1f24;
-  letter-spacing: 1px;
-}
-
-.project-card p {
-  font-size: 15px;
-  color: #7a7f85;
   margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Wiggle Animation on Hover */
+.project-card:hover img {
+  transform: scale(1.05) rotate(5deg);
+  animation: wiggle 0.5s infinite;
+}
+
+/* Wiggle Keyframes */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Project Card Title */
+.project-card h3 {
+  margin: 16px 0 8px;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+/* Change Title Color on Hover */
+.project-card:hover h3 {
+  color: var(--secondary-color);
+}
+
+/* Project Card Description */
+.project-card p {
+  font-size: 1em;
+  color: var(--subtext-color);
+  margin-bottom: 16px;
   line-height: 1.6;
 }
 
+/* Project Card Link/Button */
 .project-card a {
   display: inline-block;
   margin-top: auto;
   padding: 10px 20px;
   text-decoration: none;
   color: #ffffff;
-  background-color: #ff6f61;
-  border-radius: 8px;
+  background-color: var(--secondary-color);
+  border-radius: 12px;
   font-weight: 600;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
+/* Hover Effects for Link/Button */
 .project-card a:hover {
-  background-color: #ff3d2e;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.project-card:hover img {
+  background-color: var(--accent-color);
   transform: scale(1.05);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+/* Hover Effects for Project Card */
+.project-card:hover {
+  transform: translateY(-10px) rotate(-2deg);
+  box-shadow: 0 12px 24px var(--shadow-color);
+}
+
+/* Cool Background Animation */
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: floatBubble 8s infinite;
+}
+
+.App-header::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: floatBubble 10s infinite;
+}
+
+/* Bubble Floating Animation */
+@keyframes floatBubble {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(20px, -30px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 50px 15px;
+    font-size: 2em;
+    background-image: none; /* Remove image on smaller screens if needed */
+    background-color: #43a047; /* Slightly lighter green */
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 1.6em;
+  }
+
+  .project-card p {
+    font-size: 0.95em;
+  }
+
+  .project-card a {
+    padding: 8px 16px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 30px 10px;
+  }
+
+  .App-header {
+    padding: 40px 10px;
+    font-size: 1.8em;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 16px;
+    background-image: none; /* Remove pattern for cleaner look on mobile */
+    background-color: var(--card-bg-color);
+  }
+
+  .project-card h3 {
+    font-size: 1.4em;
+  }
+
+  .project-card p {
+    font-size: 0.9em;
+  }
+
+  .project-card a {
+    padding: 8px 16px;
+    font-size: 0.95em;
+  }
+
+  /* Adjust Bubble Animations for Mobile */
+  .App-header::before,
+  .App-header::after {
+    display: none;
+  }
 }
